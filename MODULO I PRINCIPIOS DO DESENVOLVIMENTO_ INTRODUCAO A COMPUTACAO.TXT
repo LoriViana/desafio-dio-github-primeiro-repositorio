@@ -1,0 +1,104 @@
+
+CONCEITOS IMPORTANTES:
+
+PENSAMENTO COMPUTACIONAL:
+
+	Pilares:
+		Decomposição: dividir um problema complexo em subproblemas;
+
+		Reconhecimento de padrões: identificar padrões ou tendências(similariedades e diferenças entre os problemas);
+
+		Abstração: extrapolar o conceito do problema (específico) para uma forma generalista (do mundo concreto para o mundo das ideias);
+
+		Design de Algoritmos: definir passo a passo a solução de problema.
+
+	Um  processo contínuo:
+
+		Definir uma solução, testar a solução e aperfeiçoamento da solução encontrada.
+
+HABILIDADES COMPLEMENTARES:
+
+	Raciocínio lógico : é uma forma de pensamento estruturado ou raciocínio, que permite encontrar a conclusão ou determinar a resolusão de um problema.
+ 
+	Classificação: Indução, dedução, abdução.
+
+INTRODUÇÃO À LOGICA COMPUTACIONAL:
+	
+	Problema: é uma quetão que foge a uma determinada regra, ou melhor é um desvio de percurso, o qual impede de atingir um objetivo com eficiência e eficácia.
+	
+	Lógica (resolver problema) - parte da filosofia que trata das formas do pensamento em geral e das operações intelectuais que visam à determinação do que é verdadeiro ou não.
+
+		"Organização e planejamento das instruções assertivas em um algoritmo, a fim de viabilizar a implementação de um programa."
+	
+	TÉCNICAS DE LÓGICA DE PROGRAMAÇÃO:
+	
+		Técnica Linear: execução sequenciada - com dependência entre si.
+		Técnica Estruturada: organização, disposição e ordem dos elementos essenciais que compõem um corpo (concreto ou abstrado);
+		Técnica Modular: cada regra em cada módulo. Características (simplificação, decompor o problema, verificação dos módulos);
+
+FUNDAMENTOS DE ALGORITIMOS:
+
+	Tipos:
+	Numéricos (inteiros (positivo ou negativo sem casa decimal) e reais(positivo ou negativo com casa decimal))
+	Caracter (tudo aquilo que não representa um valor numérico) - é convertido em um valor numérico.
+	Logico (boolean) Verdadeiro (1) - Falso (0) - Verdadeiro (.V ou .S) - Falso (.F ou .N)
+
+	Variáveis
+	Mutáveis, possui variações, incerto, inconstante, instável.
+	Não sabe o valor, porém sabemos o tipo declarado.
+	Restrita ao seu tipo declarado.
+
+	Constante:
+	Inalterável.
+
+	Operadores Lógicos (AND, OR, NOT)
+
+	AND (E) - interseção		OR - União			NOT (negação - inversão de resultados)
+	
+	F	F	F		F	F	F		V	F
+	F	V	F		F	V	V
+	V	F	F		V	F	V		F	V
+	V	V	V		V	V	V
+	
+	Estruturas de Repetição
+	
+	Enquanto ( teste lógico no início)
+	Repita ( Teste lógico no final) - irá executar pelo menos uma vez.
+	Para-de-até - teste inicio - repetição definida
+
+	Vetores e Matrizes
+
+	Vetor: sequência de tipos de dados - variável dimensionada com tamanho pré-fixado. (Container - matriz unidimencional)
+	Matrizes: uma tabela organizada em linhas e colunas (m x n) (Horizontal x Vertical) - coleção de variáveis - contiguas na memória - indices
+
+FUNÇÕES:
+
+	Subalgoritmos - subprogramas - blocos - métodos - sub-rotinas
+	Recebe um argumento (parâmetro ou referência) devolve um valor;
+	Modularização - codigos mais claros - reutilização de instruções
+	São blocos de instruções (códigos), identificados por nomes e parâmetros - Assinatura.
+
+INTRODUÇÃO À LINGUAGEM DE PROGRAMAÇÃO
+
+	Linguagem de programação
+
+	Método padronizado composto por um conjunto de regras sintáticas e semânticas de implementação de um código fonte (conjunto de palavras e regras).
+
+	Programa fonte (código fonte) - TRADUÇÃO - Programa objeto
+
+	Programa fonte (linguagem de alto nível)
+	TRADUÇÃO (geração do pgm objeto - execução do pgm objeto)
+	Programa Objeto (linguagem de máquina)
+
+	INTERPRETAÇÃO - Pgm Fonte é executado diretamente.
+
+	CARACTERÍSTICAS DE UM PROGRAMA
+		Legivel
+		Redigibilidade (facilidade e escrita de código)
+		Confiabilidade (faz o que foi programado)
+		Custo (análise de impacto)
+ 
+
+	
+
+		
