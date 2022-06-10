@@ -1,0 +1,50 @@
+
+Git - Versionamento de código
+
+Comandos de Navegação:
+-----------------------------------------
+
+- Abre pasta: cd <nome da pasta>
+- Retornar pasta anterior: cd .. <nome da pasta>
+- Retornar pasta raiz: cd /  <nome da pasta>
+- Lista contúdo da Pasta: dir (windows) // ls (Linux)
+- Cria uma pasta: mkdir <nome da pasta>
+- Deleta determinado arquivo: del(windows) // rm (Linux)
+- Deleta pasta: rmdir /s/q (windows) - rm -rf (Linux)
+- Limpar terminal: cls (windows) // clear (Linux)
+- Listar arquivos ocultos: ls -a
+- Autocompletar comando: tecla TAB 
+
+Chave SSH (via Git Bash)
+-----------------------------------
+1 - Gerar chave: ssh-keygen -t ed25519 email@host.com
+2 - Criar senha. Será gerada duas chaves - uma pública (a que trafega) e uma privada)
+3 - Entrar no diretório onde estão as chaves (cd <local gravado>) 
+4 - Listar o conteúdo do diretório (ls)
+5 - cat <nome da chave publica> // comanda mostra o conteúdo da chave para se copiado e colado no site Github.com (<Settings> --> <SSH and GPG keys> --> <New SSH key>)
+6 - Iniciar SSH agent: eval $(ssh-agent -s) --> ssh-add id_ed25519
+
+Comandos do Git
+-----------------------
+
+git --version [verifica a versão instalada]
+git status [mostra o estado dos arquivos e diretórios]
+
+/* Atenção ao nome / email incluido no Github
+git config --global user.name "PrimeiroNome ÚltimoNome" [configura seu nome]
+git config --global user.email "email@host.com" [configura seu e-mail]
+*/
+git init [inicia um repositório local]
+git commit meuarquivo.txt [commit somente o arquivo especificado]
+git commit arquivo1.txt arquivo2.txt [commit vários arquivos ao mesmo tempo]
+git commit meuarquivo.txt -m "mensagem de commit" [commit informando uma mensagem]
+git commit --amend -m "nova mensagem de commit" [altera a mensagem de commit realizada]
+
+git add . [adiciona todos os arquivos ou diretórios modificados]
+git add meuarquivo.txt [adiciona somente o arquivo especificado]
+git add meudiretório [adiciona somente o diretório informado]
+git rm meuarquivo.txt [remove somente o arquivo especificado]
+git rm -r meudiretório [remove somente o diretório informado]
+git push origin main [upload das alterações locais para o repositório online]
+git pull origin main [download de todos os arquivos do repositório online]
+
