@@ -1,0 +1,51 @@
+ESTRUTURA DE CONTROLE
+======================
+
+if/else, when, elvis operation
+
+IF/ELSE
+
+
+WHEN
+
+fun main() {
+    val grade= (0..10).random()
+    
+    println(grade.getStudentStatus())
+  
+}
+
+fun Int.getStudentStatus():String{
+    
+    println("Nota $this") //referência do parâmetro inteiro passado
+    
+    
+    // Através do range identifica a faixa de fota e retornar a string
+    return when (this){
+        in 0..4 ->"Reprovado"
+        in 5..7 -> "Mediano"
+        in 8..9 -> "Bom"
+        10 -> "Excelente"
+       else -> "Indefinido"
+        
+    }
+
+ELVIS OPERATOR 
+--============
+
+** O mais próximo que a linguagem possui de um operator ternário;
+** Verifica se um valor é nulo e apresenta uma opção caso seja;
+** Pode ser encadeado..
+
+fun main() {
+  var t: Int
+    var x: Int? = null
+    var w: Int? = null
+    
+    t= x?:w?:-1
+    
+    println(t)
+    
+}
+
+

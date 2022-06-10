@@ -1,0 +1,101 @@
+FUNÇÕES 
+--------------
+
+fun nomeDafunção(nome:tipo): tiporetorno
+
+*****Exemplos de declaração de funções ******
+
+fun main() {
+    val primeiroNome= "Lori"
+    val ultimoNome= "Viana"
+    
+println(getFullname(primeiroNome,ultimoNome)) //chamada da função
+   
+}
+
+**** Formas de criar e declarar funções  ****
+
+Exemplo1 
+-------------
+private fun getFullname(name:String,lastName:String) = "$name $lastName" //economia de linhas
+
+Exemplo 2 
+--------------
+private fun getFullname(name:String,lastName:String):String{
+    return "$name $lastName" 
+} 
+
+Exemplo 3
+--------------
+private fun getFullname(name:String,lastName:String):String{
+	val fullName = "$name $lastName"
+	return fullName
+
+FUNÇOES DE ORDEM SUPERIOR
+-----------------------------------------------
+***Recebem outra função ou lambda por parâmetro;
+***Bastante útil para a generalização de funções e tratamento de erros;
+
+Exemplo 1 - Passando por referência o nome da função
+=======
+fun main() {
+    val z: Int
+    z =calculate(34,90,::sum) //passa por referência o nome da função
+    println(z)   
+}
+
+fun sum (a1:Int, a2:Int)=a1.plus(a2)
+
+fun calculate(n1:Int, n2:Int,operation:(Int,Int)->Int):Int{
+    val result = operation(n1,n2)
+    return result   
+}
+
+Exemplo 2 - Passando a operação por lambda
+========
+fun main() {
+    val z: Int
+    z =calculate(34,90){a,b -> a*b}
+    println(z)   
+}
+
+fun sum (a1:Int, a2:Int)=a1.plus(a2)
+
+fun calculate(n1:Int, n2:Int,operation:(Int,Int)->Int):Int{
+    val result = operation(n1,n2)
+    return result
+}
+
+Exemplo 3 - Passando parâmetro por lambda
+========
+
+fun main() {
+    val z: Int
+    z =calculate(34,90){a,b-> 
+        println("Vou calular!") 
+        a+b}
+    println(z)   
+}
+
+fun sum (a1:Int, a2:Int)=a1.plus(a2)
+
+fun calculate(n1:Int, n2:Int,operation:(Int,Int)->Int):Int{
+    val result = operation(n1,n2)
+    return result   
+}
+
+FUNÇÕES SINGLE-LINE
+--------------------------------
+** Prefixo fun nomeDaFunção(nome:tipo)= retorno;
+** Função de uma única linha
+** Infere o tipo de retorno
+
+Exemplo:
+
+fun sum (a1:Int, a2:Int)=a1.plus(a2)
+
+FUNÇÕES /EXTENSÕES
+---------------------------------
+** Prefixo fun tipo.nomeDafunção().
+**Cria uma função que só pode ser chamada por um tipo específico, cujo valor pode ser referenciado dentro da função através da palava this.
+														

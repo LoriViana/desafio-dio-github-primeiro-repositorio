@@ -1,0 +1,242 @@
+Estrutura da Linguagem
+-------------------------------
+
+* Não utiliza ponto e virgula
+* Não possui operador ternário tradicional ()
+* Type Safe e Null Safe
+	Type Safe (é uma característica que um objeto sempre é do tipo esperado e o compilador consegue determinar se uma operação pode ser feita nele)
+	Null Safe (ou ( void safety) é a propriedade que garante que um objeto nunca é nulo, ou se for nulo exige-se o devido tratamento para não dar erro.)
+* Inferência de tipo ( val variavel = 2  -> onde a variável será do tipo que está sendo atribuida)
+
+Tipos de Dados (.MAX_VALUE)
+--------------------
+
+1 - Int
+2 - Long
+3 - Float
+4 - Double
+5 - Array
+6 - Boolean
+7 - Char
+8 - Byte
+9 - Short
+10 - Null!
+
+Declaração de Variável
+------------------------------
+
+var (valor mutável, camelCase) - inicia com letra minuscula
+	Variável que pode ter o seu valor alterado durante o código
+	Valor definido e alterado durante a execução
+
+val (valor imutável, camelCase) - inicia com letra minuscula
+	Variável que terá o valor atribuido somente uma vez
+	Valor definido durante a execução
+
+const val (valor imutável, SNAKE_CASE) - TODA MAIUSCULA
+	Constante cujo valor é atribuido durante a compitalação
+	Valor definido durante a compilação
+
+Exemplos de Declaração
+--------------------------------
+(1)
+var currentAge = 22 // por inferência de tipo 
+
+(2)
+var currentAge = Int? //nulabilidde (inteiro ou nulo)
+currentAge = null ou 55
+
+(1)
+val currentAge = 22 // por inferência de tipo 
+2)
+val currentAge = Int? //nulabilidde (inteiro ou nulo)
+currentAge= null ou 55
+
+const val MIN_AGE = 16
+const val MAX_AGE = 68
+
+ATENÇÃO
+------------
+*Qualqer tipo pode ser nulo - desde que seja explicitado na declaração da variável pelo uso do interrogação (?)
+* Inferência de tipo não atribui nulabilidade
+
+Operadores Aritméticos
+-------------------------------
+
+Comandos  -------------------	Atribuição ------------ Função
+
+a.plus(b)  ----------------------	a +=b ----------------- soma		
+a.minus(b) --------------------	a -= b ----------------- subtração
+a.times(b) --------------------- 	a*=b ------------------ Multiplicação
+a.div(b) ------------------------	a/=b ------------------ Divisão
+a.mod(b) ---------------------- 	a%=b ---------------- Resto
+
+Operadores Comparativos
+----------------------------------
+
+Comandos  -----------------------  Expressão --------- Função 
+
+a.compareTo(b)>0  -------------  a > b ----------------- Maior	
+a.compareTo(b)<0  -------------  a < b ----------------- Menor	
+a.compareTo(b)>=0  -----------  a >=b ---------------- Maior ou Igual	
+a.compareTo(b)<=0  -----------  a <=b ---------------- Menor ou Igual	
+a.equals(b)------------------------  a ==b ---------------- Igual	
+!(a.equals(b))---------------------  a !=b ----------------- Diferente
+
+ATENÇÃO
+--------------
+**compareTo retorna
+	Menor que = -1
+	Igual = 0
+	Maior que = 1
+
+**equals - retorna booleano
+
+Operadores Lógicos
+--------------------------
+
+In e range
+
+In - contém
+(!In) - não contém
+range - faixa de valores (int..int) // cria um intervalo de valores que inicia no parâmetro e acaba no segundo
+
+
+Manipuladores de String
+-------------------------------
+1 - Possui diversos métodos associados
+2 - Indexação, concatenação, comparação, formatação
+3 - Também é tratada como array de char
+
+INDEXAÇÃO
+----------------
+String como array - posição inicial 0
+
+* frist (), last(), String.length(), String[index]
+
+fun main() {
+    val s= "Olá, Mundo!"
+    println(s[0])
+    println(s.first())
+    println(s.last())
+    println(s[s.length - 1])
+}
+
+CONCATENAÇÃO
+------------------------
+Para concatenar uma variável a uma String, os simbolos ${} devem ser inseridos
+
+Empety x Blank (métodos de comparação. Se String está vazia,em branco ou é nula?)
+--------------------
+
+FUNÇÕES 
+--------------
+
+fun nomeDafunção(nome:tipo): tiporetorno
+
+*****Exemplos de declaração de funções ******
+
+fun main() {
+    val primeiroNome= "Lori"
+    val ultimoNome= "Viana"
+    
+println(getFullname(primeiroNome,ultimoNome)) //chamada da função
+   
+}
+
+**** Formas de criar e declarar funções  ****
+
+Exemplo1 
+-------------
+private fun getFullname(name:String,lastName:String) = "$name $lastName" //economia de linhas
+
+Exemplo 2 
+--------------
+private fun getFullname(name:String,lastName:String):String{
+    return "$name $lastName" 
+} 
+
+Exemplo 3
+--------------
+private fun getFullname(name:String,lastName:String):String{
+	val fullName = "$name $lastName"
+	return fullName
+
+FUNÇOES DE ORDEM SUPERIOR
+-----------------------------------------------
+***Recebem outra função ou lambda por parâmetro;
+***Bastante útil para a generalização de funções e tratamento de erros;
+
+Exemplo 1 - Passando por referência o nome da função
+=======
+fun main() {
+    val z: Int
+    z =calculate(34,90,::sum) //passa por referência o nome da função
+    println(z)   
+}
+
+fun sum (a1:Int, a2:Int)=a1.plus(a2)
+
+fun calculate(n1:Int, n2:Int,operation:(Int,Int)->Int):Int{
+    val result = operation(n1,n2)
+    return result   
+}
+
+Exemplo 2 - Passando a operação por lambda
+========
+fun main() {
+    val z: Int
+    z =calculate(34,90){a,b -> a*b}
+    println(z)   
+}
+
+fun sum (a1:Int, a2:Int)=a1.plus(a2)
+
+fun calculate(n1:Int, n2:Int,operation:(Int,Int)->Int):Int{
+    val result = operation(n1,n2)
+    return result
+}
+
+Exemplo 3 - Passando parâmetro por lambda
+========
+
+fun main() {
+    val z: Int
+    z =calculate(34,90){a,b-> 
+        println("Vou calular!") 
+        a+b}
+    println(z)   
+}
+
+fun sum (a1:Int, a2:Int)=a1.plus(a2)
+
+fun calculate(n1:Int, n2:Int,operation:(Int,Int)->Int):Int{
+    val result = operation(n1,n2)
+    return result   
+}
+
+FUNÇÕES SINGLE-LINE
+--------------------------------
+** Prefixo fun nomeDaFunção(nome:tipo)= retorno;
+** Função de uma única linha
+** Infere o tipo de retorno
+
+Exemplo:
+
+fun sum (a1:Int, a2:Int)=a1.plus(a2)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
