@@ -53,13 +53,26 @@ FUNDAMENTOS DE ALGORITIMOS:
 
 	Operadores Lógicos (AND, OR, NOT)
 
-	AND (E) - interseção		OR - União			NOT (negação - inversão de resultados)
+	AND (E) - interseção		
 	
-	F	F	F		F	F	F		V	F
-	F	V	F		F	V	V
-	V	F	F		V	F	V		F	V
-	V	V	V		V	V	V
+	F	F	F		
+	F	V	F		
+	V	F	F		
+	V	V	V		
 	
+	OR - União
+
+	F	F	F
+	F	V	V
+	V	F	V
+	V	V	V
+
+	NOT (negação - inversão de resultados)
+
+	V	F	
+	F	V	
+
+
 	Estruturas de Repetição
 	
 	Enquanto ( teste lógico no início)
